@@ -10,3 +10,10 @@ spring:
         git:
           uri: https://github.com/dishantkamble/central-application-configurations
           skip-ssl-validation: true
+          
+eureka:
+  client:
+    region: default
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: http://localhost:8082/eureka/
