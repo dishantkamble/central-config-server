@@ -8,7 +8,7 @@
         <groupId>com.dishant</groupId>
         <artifactId>central-java-dependency</artifactId>
         <version>1.0.0.RELEASE</version>
-        <relativePath>https://github.com/dishantkamble/central-java-dependency/pom.xml</relativePath>
+        <relativePath>../central-java-dependency/pom.xml</relativePath>
     </parent>
 
     <groupId>com.dishant</groupId>
