@@ -40,6 +40,14 @@
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
     </dependencies>
+    
+    <repositories>
+      <repository>
+        <id>central-java-dependency</id>
+        <name>Central Java Dependency</name>
+        <url>https://github.com/dishantkamble/central-java-dependency</url>
+      </repository>
+    </repositories>
 
     <build>
         <plugins>
