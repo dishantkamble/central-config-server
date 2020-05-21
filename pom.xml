@@ -43,9 +43,9 @@
     
     <repositories>
       <repository>
-        <id>central-java-dependency</id>
-        <name>Central Java Dependency</name>
-        <url>https://github.com/dishantkamble/central-java-dependency</url>
+        <id>github</id>
+        <name>central-java-dependency</name>
+        <url>https://maven.pkg.github.com/dishantkamble/central-java-dependency</url>
       </repository>
     </repositories>
 
