@@ -8,6 +8,7 @@
         <groupId>com.dishant</groupId>
         <artifactId>central-java-dependency</artifactId>
         <version>1.0.0</version>
+        <relativePath></relativePath>
     </parent>
 
     <groupId>com.dishant</groupId>
