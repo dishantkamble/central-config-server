@@ -8,7 +8,6 @@
         <groupId>com.dishant</groupId>
         <artifactId>central-java-dependency</artifactId>
         <version>1.0.0.RELEASE</version>
-        <relativePath>../central-java-dependency/</relativePath>
     </parent>
 
     <groupId>com.dishant</groupId>
@@ -41,13 +40,13 @@
         </dependency>
     </dependencies>
     
-    <repositories>
-      <repository>
-        <id>github</id>
-        <name>central-java-dependency</name>
-        <url>https://maven.pkg.github.com/dishantkamble/central-java-dependency</url>
-      </repository>
-    </repositories>
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Dishant Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/dishantkamble/central-config-server</url>
+        </repository>
+    </distributionManagement>
 
     <build>
         <plugins>
