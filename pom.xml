@@ -40,12 +40,20 @@
         </dependency>
     </dependencies>
     
+    <repositories>
+      <repository>
+        <id>github</id>
+        <name>central-java-dependency</name>
+        <url>https://maven.pkg.github.com/dishantkamble/central-java-dependency</url>
+      </repository>
+    </repositories>
+    
     <distributionManagement>
-        <repository>
-            <id>github</id>
-            <name>GitHub Dishant Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/dishantkamble/central-config-server</url>
-        </repository>
+      <repository>
+        <id>github</id>
+        <name>GitHub Dishant Apache Maven Packages</name>
+        <url>https://maven.pkg.github.com/dishantkamble/central-config-server</url>
+      </repository>
     </distributionManagement>
 
     <build>
