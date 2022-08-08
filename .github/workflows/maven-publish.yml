@@ -40,7 +40,7 @@ jobs:
         format: "${major}.${minor}.${patch}"
         bump_each_commit: false
     - name: Print
-      run: "echo 'New Version : ${{steps.version.outputs.version}}'"
+      run: "echo 'New Version: ${{steps.version.outputs.version}}'"
 #     - name: Publish to GitHub Packages Apache Maven
 #       run: mvn -B deploy -Dregistry=https://maven.pkg.github.com/dishantkamble -Dtoken=$GH_TOKEN
 #       env:
