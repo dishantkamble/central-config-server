@@ -15,22 +15,7 @@ jobs:
       with:
         distribution: 'zulu'
         java-version: '11'
-#     - name: Bump Version
-#       id: bump
-#       uses: remorses/bump-version@js
-#       with:
-#         version_file: ./VERSION
-#       env:
-#         GITHUB_TOKEN: ${{ github.token }}
-#     - name: Update version in pom.xml (Release only)
-#       run: mvn -B versions:set -DnewVersion=${{ steps.bump.outputs.version }} -DgenerateBackupPoms=false -Dregistry=https://maven.pkg.github.com/dishantkamble -Dtoken=$GH_TOKEN --file pom.xml
-#       env:
-#         GITHUB_TOKEN: ${{ github.token }}
-#     - name: Build with Maven
-#       run: mvn -B package --file pom.xml install -Dtoken=$GH_TOKEN
-#       env:
-#         GITHUB_TOKEN: ${{ github.token }}
-    - name: Version
+    - name: Semantic Version
       id: version
       uses: paulhatch/semantic-version@v4.0.3
       with:
@@ -39,15 +24,24 @@ jobs:
         minor_pattern: /fix?/
         format: "${major}.${minor}.${patch}"
         bump_each_commit: false
+        short_tags: false
+    - name: Update version in pom.xml (Release only)
+      run: mvn -B versions:set -DnewVersion=${{ steps.version.outputs.version }} -DgenerateBackupPoms=false -Dregistry=https://maven.pkg.github.com/dishantkamble -Dtoken=$GH_TOKEN --file pom.xml
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+    - name: Build with Maven
+      run: mvn -B package --file pom.xml install -Dtoken=$GH_TOKEN
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
     - name: Print
       run: "echo 'New Version: ${{steps.version.outputs.version}}'"
-#     - name: Publish to GitHub Packages Apache Maven
-#       run: mvn -B deploy -Dregistry=https://maven.pkg.github.com/dishantkamble -Dtoken=$GH_TOKEN
-#       env:
-#         GITHUB_TOKEN: ${{ github.token }}
-#     - name: Create Release
-#       uses: Roang-zero1/github-create-release-action@v2
-#       with:
-#         created_tag: ${{ steps.version.outputs.version }}
-#       env:
-#         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Publish to GitHub Packages Apache Maven
+      run: mvn -B deploy -Dregistry=https://maven.pkg.github.com/dishantkamble -Dtoken=$GH_TOKEN
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+    - name: Create Release
+      uses: Roang-zero1/github-create-release-action@v2
+      with:
+        created_tag: ${{ steps.version.outputs.version }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
