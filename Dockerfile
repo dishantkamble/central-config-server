@@ -1,4 +1,4 @@
-FROM openjdk:8-jdk-alpine
+FROM openjdk:19-jdk-alpine
 LABEL AUTHOR="dishantk@gmail.com"
 COPY target/central-config-server-1.0.0.SNAPSHOT.jar /opt/central-config-server/lib/
 ENTRYPOINT ["/usr/bin/java"]
