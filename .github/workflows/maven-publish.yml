@@ -44,9 +44,9 @@ jobs:
 #       run: mvn -B deploy -Dregistry=https://maven.pkg.github.com/dishantkamble -Dtoken=$GH_TOKEN
 #       env:
 #         GITHUB_TOKEN: ${{ github.token }}
-    - name: Create Release
-      uses: Roang-zero1/github-create-release-action@v2
-      with:
-        created_tag: ${{ steps.version.outputs.version }}
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#     - name: Create Release
+#       uses: Roang-zero1/github-create-release-action@v2
+#       with:
+#         created_tag: ${{ steps.version.outputs.version }}
+#       env:
+#         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
