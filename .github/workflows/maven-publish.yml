@@ -24,7 +24,6 @@ jobs:
         minor_pattern: /fix?/
         format: "${major}.${minor}.${patch}"
         bump_each_commit: false
-        short_tags: false
     - name: Update version in pom.xml (Release only)
       run: mvn -B versions:set -DnewVersion=${{ steps.version.outputs.version }} -DgenerateBackupPoms=false -Dregistry=https://maven.pkg.github.com/dishantkamble -Dtoken=$GH_TOKEN --file pom.xml
       env:
@@ -33,8 +32,6 @@ jobs:
       run: mvn -B package --file pom.xml install -Dtoken=$GH_TOKEN
       env:
         GITHUB_TOKEN: ${{ github.token }}
-    - name: Print
-      run: "echo 'New Version: ${{steps.version.outputs.version}}'"
     - name: Publish to GitHub Packages Apache Maven
       run: mvn -B deploy -Dregistry=https://maven.pkg.github.com/dishantkamble -Dtoken=$GH_TOKEN
       env:
