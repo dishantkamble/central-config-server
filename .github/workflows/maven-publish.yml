@@ -23,8 +23,6 @@ jobs:
         minor_pattern: "fix(/*/)"
         format: "${major}.${minor}.${patch}"
         bump_each_commit: false
-        # The output method used to generate list of users, 'csv' or 'json'.
-        user_format_type: "csv"
     - name: Print
       run: "echo 'New Version: ${{steps.version.outputs.version}}'"
 #     - name: Bump Version
