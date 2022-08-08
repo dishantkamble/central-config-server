@@ -32,7 +32,7 @@ jobs:
         GITHUB_TOKEN: ${{ github.token }}
     - name: Version
       id: version
-      uses: paulhatch/semantic-version@v4.0.2
+      uses: paulhatch/semantic-version@v4.0.3
       with:
         tag_prefix: ""
         major_pattern: "feat(/*/)"
