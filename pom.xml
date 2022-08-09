@@ -12,7 +12,6 @@
 
     <groupId>com.dishant</groupId>
     <artifactId>central-config-server</artifactId>
-    <!-- [bump] -->
     <version>2.1.0</version>
     <name>central-config-server</name>
     <description>Central config server</description>
