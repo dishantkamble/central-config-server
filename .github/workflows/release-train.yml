@@ -28,7 +28,7 @@ jobs:
       id: changelog
       uses: heinrichreimer/github-changelog-generator-action@v2.3
       with:
-        token: ${{ secrets.GITHUB_TOKEN }} 
+        token: ${{ secrets.GITHUB_TOKEN }}
     - name: Update version in pom.xml (Release only)
       run: |
         mvn -B versions:set -DnewVersion=${{ steps.version.outputs.version }} -DgenerateBackupPoms=false -Dregistry=https://maven.pkg.github.com/dishantkamble -Dtoken=$GH_TOKEN --file pom.xml
