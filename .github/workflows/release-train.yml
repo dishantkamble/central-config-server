@@ -24,9 +24,15 @@ jobs:
         minor_pattern: /fix?/
         format: "${major}.${minor}.${patch}"
         bump_each_commit: false
+    - name: Generate release changelog
+      id: changelog
+      uses: heinrichreimer/github-changelog-generator-action@v2.3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }} 
     - name: Update version in pom.xml (Release only)
       run: |
         mvn -B versions:set -DnewVersion=${{ steps.version.outputs.version }} -DgenerateBackupPoms=false -Dregistry=https://maven.pkg.github.com/dishantkamble -Dtoken=$GH_TOKEN --file pom.xml
+        echo ${{ steps.changelog.outputs.changelog }} >> CHANGELOG.md
         git config user.email "dishantk@gmail.com"
         git config user.name "Dishant Kamble"
         git add .
