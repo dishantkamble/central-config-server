@@ -27,6 +27,8 @@ jobs:
     - name: Update version in pom.xml (Release only)
       run: |
         mvn -B versions:set -DnewVersion=${{ steps.version.outputs.version }} -DgenerateBackupPoms=false -Dregistry=https://maven.pkg.github.com/dishantkamble -Dtoken=$GH_TOKEN --file pom.xml
+        git config user.email "dishantk@gmail.com"
+        git config user.name "Dishant Kamble"
         git add .
         git commit -m "Bump Version - maven"
         git push
