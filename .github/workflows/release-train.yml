@@ -44,14 +44,13 @@ jobs:
         GITHUB_TOKEN: ${{ github.token }}
     - name: Create changelog text
       id: changelog
-      uses: loopwerk/tag-changelog@v1
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        exclude_types: other,doc,chore
+      uses: mikepenz/release-changelog-builder-action@v3.2.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Create Release
       uses: Roang-zero1/github-create-release-action@v2
       with:
         created_tag: ${{ steps.version.outputs.version }}
-        release_text: ${{ steps.changelog.outputs.changes}}
+        release_text: ${{ steps.changelog.outputs.changelog}}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
