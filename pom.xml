@@ -12,7 +12,7 @@
 
     <groupId>com.dishant</groupId>
     <artifactId>central-config-server</artifactId>
-    <version>3.0.1</version>
+    <version>3.1.0</version>
     <name>central-config-server</name>
     <description>Central config server</description>
 
