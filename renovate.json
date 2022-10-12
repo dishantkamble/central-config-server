@@ -14,7 +14,7 @@
       "groupSlug": "all"
     },
     {
-      "matchDatasources": ["dishantkamble/central-java-dependency"],
+      "matchDatasources": ["maven"],
       "registryUrls": ["https://maven.pkg.github.com/dishantkamble/central-java-dependency"]
     }
   ],
