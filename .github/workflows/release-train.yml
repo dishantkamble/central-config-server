@@ -17,7 +17,7 @@ jobs:
         java-version: '11'
     - name: Semantic Version
       id: version
-      uses: paulhatch/semantic-version@v5.2.0
+      uses: paulhatch/semantic-version@v5.2.1
       with:
         tag_prefix: ""
         major_pattern: /feat?/
@@ -50,7 +50,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Create Release
-      uses: ncipollo/release-action@v1.12.0
+      uses: ncipollo/release-action@v1.13.0
       with:
         tag: ${{ steps.version.outputs.version }}
         body: ${{ steps.changelog.outputs.changelog}}
