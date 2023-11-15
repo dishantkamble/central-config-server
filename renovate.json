@@ -15,7 +15,7 @@
     },
     {
       "matchDatasources": ["maven"],
-      "registryUrls": ["https://maven.pkg.github.com/dishantkamble/central-java-dependency/"]
+      "registryUrls": ["https://maven.pkg.github.com/dishantkamble/"]
     }
   ],
   "lockFileMaintenance": {
